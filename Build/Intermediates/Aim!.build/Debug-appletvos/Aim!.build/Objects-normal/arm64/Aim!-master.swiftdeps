@@ -1,0 +1,9 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
+options: "5c11f48fe61e738e064e9ec8a651b492"
+build_time: [525120506, 965450000]
+inputs:
+  "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/SecondViewController.swift": [525050286, 0]
+  "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/AppDelegate.swift": [525045120, 0]
+  "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/AimSession.swift": [525118513, 0]
+  "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/SessionManager.swift": [525118513, 0]
+  "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/FirstViewController.swift": [525120506, 0]
