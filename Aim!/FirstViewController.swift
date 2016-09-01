@@ -9,6 +9,8 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    var delegate: AimSessionDurationInfoDelegate?
 
     // Outlets from FirstViewController
     @IBOutlet weak var defaultSessionDurationButton: UIButton!
@@ -23,7 +25,6 @@ class FirstViewController: UIViewController {
 //        if let imageView = defaultSessionDurationButton.imageView {
 //            imageView.adjustsImageWhenAncestorFocused = true
 //        }
-        defaultSessionDurationButton.clipsToBounds = false
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -32,18 +33,42 @@ class FirstViewController: UIViewController {
 
     @IBAction func defaultSessionDurationButtonPressed(sender: AnyObject) {
         print("defaultSessionDurationButtonPressed")
+        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
+        if let delegate = self.delegate {
+            delegate.getSessionDuration(25)
+        }
     }
     
     @IBAction func hourLongSessionDurationButtonPressed(sender: AnyObject) {
         print("hourLongSessionDurationButtonPressed")
+        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
+        if let delegate = self.delegate {
+            delegate.getSessionDuration(60)
+        }
     }
-
+    
     @IBAction func customizeSessionDurationButtonPressed(sender: AnyObject) {
         print("customizeSessionDurationButtonPressed")
+//        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
+        
     }
     
     @IBAction func startSessionWithoutTimeLimitationButtonPressed(sender: AnyObject) {
         print("startSessionWithoutTimeLimitationButtonPressed")
+        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
+        if let delegate = self.delegate {
+            delegate.getSessionDuration(14114624)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMainAimSessionSegue" {
+            let mainSessionViewController = segue.destinationViewController as? SessionMainViewController
+            
+            if let sessionVC = mainSessionViewController {
+                self.delegate = sessionVC
+            }
+        }
     }
 
 }

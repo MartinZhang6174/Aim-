@@ -92,14 +92,22 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 # endif
 #endif
 #if defined(__has_feature) && __has_feature(modules)
+@import ObjectiveC;
+@import Foundation;
 @import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
+
+SWIFT_CLASS("_TtC4Aim_10AimSession")
+@interface AimSession : NSObject
+@property (nonatomic) NSTimeInterval aimSessionDuration;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIWindow;
 @class UIApplication;
-@class NSObject;
 
 SWIFT_CLASS("_TtC4Aim_11AppDelegate")
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -113,13 +121,24 @@ SWIFT_CLASS("_TtC4Aim_11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIStoryboardSegue;
+@class UIButton;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC4Aim_19FirstViewController")
 @interface FirstViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified defaultSessionDurationButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified hourLongSessionDurationButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified customizeSessionDurationButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified startSessionWithoutTimeLimitButton;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
+- (void)viewWillAppear:(BOOL)animated;
+- (IBAction)defaultSessionDurationButtonPressed:(id _Nonnull)sender;
+- (IBAction)hourLongSessionDurationButtonPressed:(id _Nonnull)sender;
+- (IBAction)customizeSessionDurationButtonPressed:(id _Nonnull)sender;
+- (IBAction)startSessionWithoutTimeLimitationButtonPressed:(id _Nonnull)sender;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -128,9 +147,31 @@ SWIFT_CLASS("_TtC4Aim_19FirstViewController")
 SWIFT_CLASS("_TtC4Aim_20SecondViewController")
 @interface SecondViewController : UIViewController
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UILabel;
+
+SWIFT_CLASS("_TtC4Aim_25SessionMainViewController")
+@interface SessionMainViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified aimSessionDurationInfoDisplayLabel;
+- (void)viewDidLoad;
+- (void)getSessionDuration:(NSInteger)duration;
+- (IBAction)endAimSessionButtonPressed:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Aim_14SessionManager")
+@interface SessionManager : NSObject
+@property (nonatomic, readonly) NSTimeInterval aimDefaultSessionDuration;
+@property (nonatomic, readonly) NSTimeInterval aimHourLongSessionDuration;
+@property (nonatomic) NSTimeInterval aimCustomizableSessionDuration;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #pragma clang diagnostic pop

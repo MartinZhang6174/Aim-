@@ -100,11 +100,66 @@
                         <outlet property="defaultSessionDurationButton" destination="fkv-n3-h5H" id="fyj-Yt-9Xr"/>
                         <outlet property="hourLongSessionDurationButton" destination="NZM-1v-TYU" id="eU7-rQ-SNF"/>
                         <outlet property="startSessionWithoutTimeLimitButton" destination="Lyn-zU-eFI" id="gpW-wt-MNt"/>
+                        <segue destination="P9Y-1i-Rod" kind="show" identifier="showMainAimSessionSegue" id="Bog-GV-qx9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2316" y="-634"/>
+        </scene>
+        <!--Session Main View Controller-->
+        <scene sceneID="Te8-rI-6rE">
+            <objects>
+                <viewController id="P9Y-1i-Rod" customClass="SessionMainViewController" customModule="Aim_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S6u-rx-SLN"/>
+                        <viewControllerLayoutGuide type="bottom" id="7NR-50-CeQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rfg-nm-Jku">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 : 59 : 59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82g-mz-9cj">
+                                <rect key="frame" x="213" y="350" width="1494" height="359"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-UI-iBh">
+                                <rect key="frame" x="778" y="829" width="364" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="End Aim Session"/>
+                                <connections>
+                                    <action selector="endAimSessionButtonPressed:" destination="P9Y-1i-Rod" eventType="primaryActionTriggered" id="696-l3-1Kv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Duration Info Display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHQ-zP-7CL">
+                                <rect key="frame" x="580" y="228" width="760" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="82g-mz-9cj" secondAttribute="trailing" constant="552" id="LEz-Uh-l7G"/>
+                            <constraint firstItem="82g-mz-9cj" firstAttribute="top" secondItem="pHQ-zP-7CL" secondAttribute="bottom" constant="50" id="UaB-qk-xP1"/>
+                            <constraint firstItem="pHQ-zP-7CL" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Rfg-nm-Jku" secondAttribute="leadingMargin" constant="869" id="V3Q-ZG-85M"/>
+                            <constraint firstItem="Miu-UI-iBh" firstAttribute="centerX" secondItem="Rfg-nm-Jku" secondAttribute="centerX" id="V9Q-3j-FOd"/>
+                            <constraint firstItem="Miu-UI-iBh" firstAttribute="top" secondItem="82g-mz-9cj" secondAttribute="bottom" constant="120" id="atG-Uj-hGH"/>
+                            <constraint firstItem="82g-mz-9cj" firstAttribute="centerX" secondItem="Rfg-nm-Jku" secondAttribute="centerX" id="bqy-ot-RAk"/>
+                            <constraint firstItem="82g-mz-9cj" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Rfg-nm-Jku" secondAttribute="leadingMargin" constant="552" id="fOj-WP-e3l"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="pHQ-zP-7CL" secondAttribute="trailing" constant="868" id="rBS-g9-3kl"/>
+                            <constraint firstItem="pHQ-zP-7CL" firstAttribute="centerX" secondItem="Rfg-nm-Jku" secondAttribute="centerX" id="uiu-0N-tcl"/>
+                            <constraint firstItem="82g-mz-9cj" firstAttribute="top" secondItem="S6u-rx-SLN" secondAttribute="bottom" constant="350" id="zbR-Vj-tLe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aimSessionDurationInfoDisplayLabel" destination="pHQ-zP-7CL" id="w9Z-iR-1Uw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Nm-PR-agJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4484" y="-634"/>
         </scene>
         <!--Aim Achievements -->
         <scene sceneID="wg7-f3-ORb">
@@ -144,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2246" y="624"/>
+            <point key="canvasLocation" x="2316" y="709"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

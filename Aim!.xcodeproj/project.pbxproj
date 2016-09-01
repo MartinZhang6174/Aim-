@@ -14,6 +14,8 @@
 		9C2169201D6908800010CDFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C21691F1D6908800010CDFD /* Assets.xcassets */; };
 		9C2169281D6923980010CDFD /* AimSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2169271D6923980010CDFD /* AimSession.swift */; };
 		9C21692F1D6A25AF0010CDFD /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21692E1D6A25AF0010CDFD /* SessionManager.swift */; };
+		9C2169341D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2169331D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift */; };
+		9C2169361D6C083C0010CDFD /* SessionMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2169351D6C083C0010CDFD /* SessionMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		9C2169211D6908800010CDFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C2169271D6923980010CDFD /* AimSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AimSession.swift; sourceTree = "<group>"; };
 		9C21692E1D6A25AF0010CDFD /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		9C2169331D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AimSessionDurationInfoDelegate.swift; sourceTree = "<group>"; };
+		9C2169351D6C083C0010CDFD /* SessionMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				9C2169161D6908800010CDFD /* AppDelegate.swift */,
+				9C2169321D6C06CF0010CDFD /* Delegates */,
 				9C21692B1D6A25360010CDFD /* Controller Classes */,
 				9C21692A1D6A252C0010CDFD /* Model Classes */,
 				9C2169291D6A25210010CDFD /* Manager Classes */,
@@ -88,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				9C2169181D6908800010CDFD /* FirstViewController.swift */,
+				9C2169351D6C083C0010CDFD /* SessionMainViewController.swift */,
 				9C21691A1D6908800010CDFD /* SecondViewController.swift */,
 			);
 			name = "Controller Classes";
@@ -109,6 +115,14 @@
 			);
 			name = "Supporting Files";
 			path = "Aim!";
+			sourceTree = "<group>";
+		};
+		9C2169321D6C06CF0010CDFD /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				9C2169331D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +197,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C21691B1D6908800010CDFD /* SecondViewController.swift in Sources */,
+				9C2169361D6C083C0010CDFD /* SessionMainViewController.swift in Sources */,
 				9C2169171D6908800010CDFD /* AppDelegate.swift in Sources */,
 				9C2169281D6923980010CDFD /* AimSession.swift in Sources */,
+				9C2169341D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift in Sources */,
 				9C21692F1D6A25AF0010CDFD /* SessionManager.swift in Sources */,
 				9C2169191D6908800010CDFD /* FirstViewController.swift in Sources */,
 			);
@@ -336,6 +352,7 @@
 				9C2169261D6908800010CDFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
