@@ -21,10 +21,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-//        if let imageView = defaultSessionDurationButton.imageView {
-//            imageView.adjustsImageWhenAncestorFocused = true
-//        }
+
     }
     
     override func viewWillAppear(animated: Bool) {
