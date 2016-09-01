@@ -1,6 +1,6 @@
 version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
 options: "4c0c861fc41da11288ae56c5a0c1bdb0"
-build_time: [526070632, 611013000]
+build_time: [526071515, 336813000]
 inputs:
   "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/SecondViewController.swift": [525050286, 0]
   "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/SessionMainViewController.swift": [525739272, 0]
@@ -8,4 +8,4 @@ inputs:
   "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/AimSession.swift": [525118513, 0]
   "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/AimSessionDurationInfoDelegate.swift": [525739272, 0]
   "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/SessionManager.swift": [525118513, 0]
-  "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/FirstViewController.swift": [525739272, 0]
+  "/Users/martinzhang/Desktop/TVOS Development/Aim!/Aim!/FirstViewController.swift": [526071514, 0]
