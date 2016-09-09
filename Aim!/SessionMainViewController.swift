@@ -11,7 +11,7 @@ import UIKit
 class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegate {
     
     @IBOutlet weak var aimSessionDurationInfoDisplayLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +22,7 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
     }
 
     @IBAction func endAimSessionButtonPressed(sender: AnyObject) {
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
