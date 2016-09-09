@@ -21,6 +21,10 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
         aimSessionDurationInfoDisplayLabel.text = "\(duration)-Minute-Long Session In Progress!"
     }
 
+    func getSessionDurationForSessionWithoutDurationLimits() {
+        aimSessionDurationInfoDisplayLabel.text = "'Forever-long' Session In Progress!"
+    }
+    
     @IBAction func endAimSessionButtonPressed(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)
