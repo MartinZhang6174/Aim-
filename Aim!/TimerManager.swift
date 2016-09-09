@@ -36,6 +36,7 @@ class TimerManager {
     @objc func incrementSecond() {
         seconds += 1
         print("\(seconds)")
+        
     }
     
 }

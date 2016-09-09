@@ -42,6 +42,7 @@ class FirstViewController: UIViewController {
     
     @IBAction func hourLongSessionDurationButtonPressed(sender: AnyObject) {
         print("hourLongSessionDurationButtonPressed")
+        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
             delegate.getSessionDuration(60)
@@ -56,9 +57,10 @@ class FirstViewController: UIViewController {
     
     @IBAction func startSessionWithoutTimeLimitationButtonPressed(sender: AnyObject) {
         print("startSessionWithoutTimeLimitationButtonPressed")
+        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
-            delegate.getSessionDuration(14114624)
+            delegate.getSessionDurationForSessionWithoutDurationLimits()
         }
     }
     
