@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  NSTimerExtension.swift
 //  Aim!
 //
 //  Created by Nelson Chow on 2016-09-01.
@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+extension NSTimer {
+    
+    func startTimer() {
+        
+    }
+}
