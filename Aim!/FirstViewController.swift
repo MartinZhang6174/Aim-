@@ -51,7 +51,7 @@ class FirstViewController: UIViewController {
     
     @IBAction func customizeSessionDurationButtonPressed(sender: AnyObject) {
         print("customizeSessionDurationButtonPressed")
-//        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
+        performSegueWithIdentifier("sessionDurationCustomizationSegue", sender: self)
         
     }
     
