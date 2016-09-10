@@ -11,6 +11,7 @@ import UIKit
 class FirstViewController: UIViewController {
     
     var delegate: AimSessionDurationInfoDelegate?
+//    var timerDelegate: AimSessionTimerLabelDisplayDelegate?
     var timerManager = TimerManager()
     
     // Outlets from FirstViewController
@@ -38,6 +39,13 @@ class FirstViewController: UIViewController {
             delegate.getSessionDuration(25)
         }
         
+        // Doesn't work: 
+        
+//        print(self.timerManager.seconds)
+        // Updating timer label content
+//        if let timerLabelDelegate = self.timerDelegate {
+//            timerLabelDelegate.updateTimerLabel(self.timerManager.seconds)
+//        }
     }
     
     @IBAction func hourLongSessionDurationButtonPressed(sender: AnyObject) {
@@ -51,6 +59,9 @@ class FirstViewController: UIViewController {
     
     @IBAction func customizeSessionDurationButtonPressed(sender: AnyObject) {
         print("customizeSessionDurationButtonPressed")
+        
+        // Display screen to customize session duration:
+        
 //        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         
     }

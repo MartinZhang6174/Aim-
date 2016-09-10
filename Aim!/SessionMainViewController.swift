@@ -8,9 +8,10 @@
 
 import UIKit
 
-class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegate {
+class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegate, AimSessionTimerLabelDisplayDelegate {
     
     @IBOutlet weak var aimSessionDurationInfoDisplayLabel: UILabel!
+    @IBOutlet weak var aimSessionTimerDisplayLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,10 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
 
     func getSessionDurationForSessionWithoutDurationLimits() {
         aimSessionDurationInfoDisplayLabel.text = "'Forever-long' Session In Progress!"
+    }
+    
+    func updateTimerLabel(timerSeconds: Int) {
+        aimSessionDurationInfoDisplayLabel.text = "\(timerSeconds)"
     }
     
     @IBAction func endAimSessionButtonPressed(sender: AnyObject) {

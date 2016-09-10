@@ -12,6 +12,7 @@ class TimerManager {
 
     // MARK: - Properties
     let TIME_INTERVAL: NSTimeInterval = 1
+    var delegate: AimSessionTimerLabelDisplayDelegate?
     
     var seconds = 0
     var aimTimer = NSTimer()
@@ -37,6 +38,9 @@ class TimerManager {
         seconds += 1
         print("\(seconds)")
         
+        if let delegate = self.delegate {
+            delegate.updateTimerLabel(seconds)
+        }
     }
     
 }
