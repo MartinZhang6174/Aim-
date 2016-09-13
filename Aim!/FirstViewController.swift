@@ -11,9 +11,14 @@ import UIKit
 class FirstViewController: UIViewController {
     
     var delegate: AimSessionDurationInfoDelegate?
-//    var timerDelegate: AimSessionTimerLabelDisplayDelegate?
-    var timerManager = TimerManager()
-    
+//<<<<<<< HEAD
+////    var timerDelegate: AimSessionTimerLabelDisplayDelegate?
+//    var timerManager = TimerManager()
+//    
+//=======
+//    var timerManager = TimerManager()
+
+//>>>>>>> origin/NelsonWorkingBranch
     // Outlets from FirstViewController
     @IBOutlet weak var defaultSessionDurationButton: UIButton!
     @IBOutlet weak var hourLongSessionDurationButton: UIButton!
@@ -27,13 +32,13 @@ class FirstViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        timerManager.resetTimer()
+//        timerManager.resetTimer()
         self.tabBarController?.tabBar.backgroundColor = UIColor.redColor()
     }
 
     @IBAction func defaultSessionDurationButtonPressed(sender: AnyObject) {
         print("defaultSessionDurationButtonPressed")
-        timerManager.startTimer()
+//        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
             delegate.getSessionDuration(25)
@@ -50,7 +55,7 @@ class FirstViewController: UIViewController {
     
     @IBAction func hourLongSessionDurationButtonPressed(sender: AnyObject) {
         print("hourLongSessionDurationButtonPressed")
-        timerManager.startTimer()
+//        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
             delegate.getSessionDuration(60)
@@ -68,7 +73,7 @@ class FirstViewController: UIViewController {
     
     @IBAction func startSessionWithoutTimeLimitationButtonPressed(sender: AnyObject) {
         print("startSessionWithoutTimeLimitationButtonPressed")
-        timerManager.startTimer()
+//        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
             delegate.getSessionDurationForSessionWithoutDurationLimits()
