@@ -240,7 +240,7 @@
                     </view>
                     <connections>
                         <outlet property="minusButton" destination="eTq-Lf-boa" id="3Oi-30-CZ8"/>
-                        <outlet property="plusButton" destination="o5k-XL-gYF" id="P3h-4u-R4B"/>
+                        <outlet property="plusButton" destination="o5k-XL-gYF" id="G4q-kH-QU2"/>
                         <outlet property="startCustomizedSessionButton" destination="QnU-Mi-Nke" id="GlT-wU-ZY9"/>
                         <segue destination="P9Y-1i-Rod" kind="show" identifier="startCustomizedSessionSegue" id="CY7-j6-1Dc"/>
                     </connections>
