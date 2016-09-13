@@ -13,8 +13,13 @@ class SessionDurationCustomizationViewController: UIViewController {
     @IBOutlet weak var startCustomizedSessionButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
+    @IBOutlet weak var customDurationLabel: UILabel!
     private var focusGuide: UIFocusGuide!
     private var focusGuide1: UIFocusGuide!
+    
+    var delegate: AimSessionDurationInfoDelegate?
+    
+    var customDuration: NSTimeInterval = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +85,12 @@ class SessionDurationCustomizationViewController: UIViewController {
     
     @IBAction func startCustomizedSessionButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("startCustomizedSessionSegue", sender: self)
+        if let delegate = self.delegate {
+            
+            delegate.getSessionDuration(60)
+        }
     }
+    
     
     /*
     // MARK: - Navigation

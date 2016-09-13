@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -240,6 +240,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="customDurationLabel" destination="Iv7-cd-fjb" id="oO4-50-Qq6"/>
                         <outlet property="minusButton" destination="eTq-Lf-boa" id="3Oi-30-CZ8"/>
                         <outlet property="plusButton" destination="o5k-XL-gYF" id="P3h-4u-R4B"/>
                         <outlet property="startCustomizedSessionButton" destination="QnU-Mi-Nke" id="GlT-wU-ZY9"/>

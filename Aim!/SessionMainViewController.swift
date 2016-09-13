@@ -19,16 +19,18 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Add observers to handle timer label update and completed timer.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SessionMainViewController.updateTimerLabel), name: TimerManager.notificationSecondTick, object: timerManager)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SessionMainViewController.timerComplete), name: TimerManager.notificationComplete, object: timerManager)
         
-        aimTimerLabel.text = timerManager.timeString
+        updateTimerLabel()
+//        aimTimerLabel.text = timerManager.timeString
     }
     
     // MARK: - AimSessionDurationInfoDelegate
-    func getSessionDuration(duration: Int) {
-        aimSessionDurationInfoDisplayLabel.text = "\(duration)-Minute-Long Session In Progress!"
-        timerManager.duration = NSTimeInterval(duration * 60)
+    func getSessionDuration(durationInSeconds: NSTimeInterval) {
+        aimSessionDurationInfoDisplayLabel.text = "\(durationInSeconds / 60)-Minute-Long Session In Progress!"
+        timerManager.duration = NSTimeInterval(durationInSeconds)
         timerManager.startTimer()
     }
 
@@ -55,7 +57,7 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
     }
 
     func timerComplete() {
-        
+        // do this when timer completes its full duration.
     }
 }
 
