@@ -18,7 +18,8 @@
 		9C21692F1D6A25AF0010CDFD /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21692E1D6A25AF0010CDFD /* SessionManager.swift */; };
 		9C2169341D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2169331D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift */; };
 		9C2169361D6C083C0010CDFD /* SessionMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2169351D6C083C0010CDFD /* SessionMainViewController.swift */; };
-		9C7748131D84A68100E0BC3B /* SessionDurationCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7748121D84A68100E0BC3B /* SessionDurationCustomizationViewController.swift */; };
+		9C6AD8891D8799E1006EAAAE /* SessionDurationCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AD8881D8799E1006EAAAE /* SessionDurationCustomizationViewController.swift */; };
+		9C77480F1D825A8300E0BC3B /* AimSessionTimerLabelDisplayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C77480E1D825A8300E0BC3B /* AimSessionTimerLabelDisplayDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +36,8 @@
 		9C21692E1D6A25AF0010CDFD /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		9C2169331D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AimSessionDurationInfoDelegate.swift; sourceTree = "<group>"; };
 		9C2169351D6C083C0010CDFD /* SessionMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMainViewController.swift; sourceTree = "<group>"; };
-		9C7748121D84A68100E0BC3B /* SessionDurationCustomizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDurationCustomizationViewController.swift; sourceTree = "<group>"; };
+		9C6AD8881D8799E1006EAAAE /* SessionDurationCustomizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDurationCustomizationViewController.swift; sourceTree = "<group>"; };
+		9C77480E1D825A8300E0BC3B /* AimSessionTimerLabelDisplayDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AimSessionTimerLabelDisplayDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +113,7 @@
 				9C2169181D6908800010CDFD /* FirstViewController.swift */,
 				9C2169351D6C083C0010CDFD /* SessionMainViewController.swift */,
 				9C21691A1D6908800010CDFD /* SecondViewController.swift */,
-				9C7748121D84A68100E0BC3B /* SessionDurationCustomizationViewController.swift */,
+				9C6AD8881D8799E1006EAAAE /* SessionDurationCustomizationViewController.swift */,
 			);
 			name = "Controller Classes";
 			sourceTree = "<group>";
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				9C2169331D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift */,
+				9C77480E1D825A8300E0BC3B /* AimSessionTimerLabelDisplayDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -215,10 +218,11 @@
 			files = (
 				9C21691B1D6908800010CDFD /* SecondViewController.swift in Sources */,
 				1B77EC481D78B4DC00276501 /* TimerManager.swift in Sources */,
+				9C6AD8891D8799E1006EAAAE /* SessionDurationCustomizationViewController.swift in Sources */,
 				9C2169361D6C083C0010CDFD /* SessionMainViewController.swift in Sources */,
-				9C7748131D84A68100E0BC3B /* SessionDurationCustomizationViewController.swift in Sources */,
 				9C2169171D6908800010CDFD /* AppDelegate.swift in Sources */,
 				9C2169281D6923980010CDFD /* AimSession.swift in Sources */,
+				9C77480F1D825A8300E0BC3B /* AimSessionTimerLabelDisplayDelegate.swift in Sources */,
 				9C2169341D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift in Sources */,
 				9C21692F1D6A25AF0010CDFD /* SessionManager.swift in Sources */,
 				1B77EC4B1D78B70600276501 /* NSTimerExtension.swift in Sources */,

@@ -71,4 +71,5 @@ fastlane/test_output
 Build/Intermediates/Aim!.build/Debug-appletvsimulator
 Build/Products/Debug-appletvsimulator
 Aim!.xcodeproj/project.xcworkspace/xcuserdata/martinzhang.xcuserdatad/UserInterfaceState.xcuserstate
+Aim!.xcodeproj/xcuserdata
 Build/Products/Debug-appletvsimulator
