@@ -9,11 +9,7 @@
 import UIKit
 
 class AimSession: NSObject {
-
     var aimSessionDuration: NSTimeInterval = 0
     var totalSeconds = 0
-//    init(duration: NSTimeInterval) {
-//        sessionDuration = duration
-//    }
 
 }

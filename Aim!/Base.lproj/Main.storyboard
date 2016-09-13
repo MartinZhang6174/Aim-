@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -101,6 +101,7 @@
                         <outlet property="hourLongSessionDurationButton" destination="NZM-1v-TYU" id="eU7-rQ-SNF"/>
                         <outlet property="startSessionWithoutTimeLimitButton" destination="Lyn-zU-eFI" id="gpW-wt-MNt"/>
                         <segue destination="P9Y-1i-Rod" kind="show" identifier="showMainAimSessionSegue" id="Bog-GV-qx9"/>
+                        <segue destination="RnX-VV-9nc" kind="show" identifier="sessionDurationCustomizationSegue" id="EMK-Pb-L9g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -125,6 +126,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Duration Info Display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHQ-zP-7CL">
+                                <rect key="frame" x="580" y="228" width="760" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-UI-iBh">
                                 <rect key="frame" x="778" y="829" width="364" height="86"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
@@ -133,19 +140,13 @@
                                     <action selector="endAimSessionButtonPressed:" destination="P9Y-1i-Rod" eventType="primaryActionTriggered" id="696-l3-1Kv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Duration Info Display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHQ-zP-7CL">
-                                <rect key="frame" x="580" y="228" width="760" height="72"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="7NR-50-CeQ" firstAttribute="top" secondItem="Miu-UI-iBh" secondAttribute="bottom" constant="165" id="HJw-8I-o2z"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="82g-mz-9cj" secondAttribute="trailing" constant="552" id="LEz-Uh-l7G"/>
                             <constraint firstItem="82g-mz-9cj" firstAttribute="top" secondItem="pHQ-zP-7CL" secondAttribute="bottom" constant="50" id="UaB-qk-xP1"/>
                             <constraint firstItem="pHQ-zP-7CL" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Rfg-nm-Jku" secondAttribute="leadingMargin" constant="869" id="V3Q-ZG-85M"/>
                             <constraint firstItem="Miu-UI-iBh" firstAttribute="centerX" secondItem="Rfg-nm-Jku" secondAttribute="centerX" id="V9Q-3j-FOd"/>
-                            <constraint firstItem="Miu-UI-iBh" firstAttribute="top" secondItem="82g-mz-9cj" secondAttribute="bottom" constant="120" id="atG-Uj-hGH"/>
                             <constraint firstItem="82g-mz-9cj" firstAttribute="centerX" secondItem="Rfg-nm-Jku" secondAttribute="centerX" id="bqy-ot-RAk"/>
                             <constraint firstItem="82g-mz-9cj" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Rfg-nm-Jku" secondAttribute="leadingMargin" constant="552" id="fOj-WP-e3l"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="pHQ-zP-7CL" secondAttribute="trailing" constant="868" id="rBS-g9-3kl"/>
@@ -161,6 +162,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Nm-PR-agJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4484" y="-634"/>
+        </scene>
+        <!--Session Duration Customization View Controller-->
+        <scene sceneID="Wjw-lS-xVF">
+            <objects>
+                <viewController id="RnX-VV-9nc" customClass="SessionDurationCustomizationViewController" customModule="Aim_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M7t-WY-8k3"/>
+                        <viewControllerLayoutGuide type="bottom" id="oDP-wf-t6k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ce4-d3-Zfk">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTq-Lf-boa">
+                                <rect key="frame" x="140" y="361" width="200" height="359"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="W6L-kg-OmN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="reduceSessionDurationButtonPressed:" destination="RnX-VV-9nc" eventType="primaryActionTriggered" id="nME-Du-2ad"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Session Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSI-bK-Cc2">
+                                <rect key="frame" x="593" y="200" width="734" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="47 : 15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iv7-cd-fjb">
+                                <rect key="frame" x="525" y="361" width="871" height="359"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5k-XL-gYF">
+                                <rect key="frame" x="1581" y="361" width="200" height="359"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="gzW-0m-ZAs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addSessionDurationButtonPressed:" destination="RnX-VV-9nc" eventType="primaryActionTriggered" id="Yvk-17-Kg6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnU-Mi-Nke">
+                                <rect key="frame" x="662" y="829" width="597" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="597" id="evk-tq-Dy1"/>
+                                    <constraint firstAttribute="height" constant="86" id="oNl-aB-Nty"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Start Customized Aim Session"/>
+                                <connections>
+                                    <action selector="startCustomizedSessionButtonPressed:" destination="RnX-VV-9nc" eventType="primaryActionTriggered" id="p9m-zE-4Z4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="eTq-Lf-boa" firstAttribute="centerY" secondItem="Iv7-cd-fjb" secondAttribute="centerY" id="1KE-RC-uOr"/>
+                            <constraint firstItem="eTq-Lf-boa" firstAttribute="height" secondItem="Iv7-cd-fjb" secondAttribute="height" id="8eT-iB-81M"/>
+                            <constraint firstItem="o5k-XL-gYF" firstAttribute="leading" secondItem="Iv7-cd-fjb" secondAttribute="trailing" constant="185" id="Fut-C8-jyU"/>
+                            <constraint firstItem="LSI-bK-Cc2" firstAttribute="top" secondItem="M7t-WY-8k3" secondAttribute="bottom" constant="200" id="IdL-xM-AIK"/>
+                            <constraint firstItem="LSI-bK-Cc2" firstAttribute="centerX" secondItem="Ce4-d3-Zfk" secondAttribute="centerX" id="Np8-BL-Lzh"/>
+                            <constraint firstItem="QnU-Mi-Nke" firstAttribute="centerX" secondItem="Ce4-d3-Zfk" secondAttribute="centerX" id="cOI-ef-MT1"/>
+                            <constraint firstItem="oDP-wf-t6k" firstAttribute="top" secondItem="QnU-Mi-Nke" secondAttribute="bottom" constant="165" id="crx-V3-c4y"/>
+                            <constraint firstItem="o5k-XL-gYF" firstAttribute="centerY" secondItem="Iv7-cd-fjb" secondAttribute="centerY" id="cs8-IE-d0X"/>
+                            <constraint firstItem="o5k-XL-gYF" firstAttribute="height" secondItem="Iv7-cd-fjb" secondAttribute="height" id="eld-wa-ekw"/>
+                            <constraint firstItem="Iv7-cd-fjb" firstAttribute="centerX" secondItem="Ce4-d3-Zfk" secondAttribute="centerX" id="iuY-LH-o2S"/>
+                            <constraint firstItem="Iv7-cd-fjb" firstAttribute="leading" secondItem="eTq-Lf-boa" secondAttribute="trailing" constant="185" id="kA0-3i-q1x"/>
+                            <constraint firstItem="Iv7-cd-fjb" firstAttribute="centerY" secondItem="Ce4-d3-Zfk" secondAttribute="centerY" id="sU1-4s-1VJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="minusButton" destination="eTq-Lf-boa" id="3Oi-30-CZ8"/>
+                        <outlet property="plusButton" destination="o5k-XL-gYF" id="P3h-4u-R4B"/>
+                        <outlet property="startCustomizedSessionButton" destination="QnU-Mi-Nke" id="GlT-wU-ZY9"/>
+                        <segue destination="P9Y-1i-Rod" kind="show" identifier="startCustomizedSessionSegue" id="CY7-j6-1Dc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdW-l3-tiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4484" y="646"/>
         </scene>
         <!--Aim Achievements -->
         <scene sceneID="wg7-f3-ORb">
@@ -227,4 +315,7 @@
         <image name="Artboard 2@1x" width="30" height="30"/>
         <image name="AwardWhiteBG" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="CY7-j6-1Dc"/>
+    </inferredMetricsTieBreakers>
 </document>

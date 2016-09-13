@@ -64,11 +64,7 @@ class FirstViewController: UIViewController {
     
     @IBAction func customizeSessionDurationButtonPressed(sender: AnyObject) {
         print("customizeSessionDurationButtonPressed")
-        
-        // Display screen to customize session duration:
-        
-//        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
-        
+        performSegueWithIdentifier("sessionDurationCustomizationSegue", sender: self)
     }
     
     @IBAction func startSessionWithoutTimeLimitationButtonPressed(sender: AnyObject) {
