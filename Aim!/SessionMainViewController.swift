@@ -18,37 +18,38 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SessionMainViewController.updateTimerBasedViews), name: TimerManager.notificationSecondTick, object: timerManager)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "timerComplete", name: TimerManager.notificationComplete, object: timerManager)
-//        aimTimerLabel.text =
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SessionMainViewController.updateTimerLabel), name: TimerManager.notificationSecondTick, object: timerManager)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SessionMainViewController.timerComplete), name: TimerManager.notificationComplete, object: timerManager)
+        
+        aimTimerLabel.text = timerManager.timeString
     }
     
     // MARK: - AimSessionDurationInfoDelegate
     func getSessionDuration(duration: Int) {
         aimSessionDurationInfoDisplayLabel.text = "\(duration)-Minute-Long Session In Progress!"
+        timerManager.duration = NSTimeInterval(duration * 60)
         timerManager.startTimer()
     }
 
     func getSessionDurationForSessionWithoutDurationLimits() {
         aimSessionDurationInfoDisplayLabel.text = "'Forever-long' Session In Progress!"
+        timerManager.startTimer()
     }
     
     // MARK: - Actions
     @IBAction func endAimSessionButtonPressed(sender: AnyObject) {
-        
         timerManager.stopTimer()
         
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - General Functions
-    func updateTimerBasedViews() {
-        updateTimerLabel()
-    }
-    
     func updateTimerLabel() {
         aimTimerLabel.text = timerManager.timeString
     }
 
+    func timerComplete() {
+        
+    }
 }
 

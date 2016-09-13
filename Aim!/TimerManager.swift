@@ -5,6 +5,7 @@
 //  Created by Nelson Chow on 2016-09-01.
 //  Copyright © 2016 Martin Zhang. All rights reserved.
 //
+//
 
 import UIKit
 
@@ -16,10 +17,10 @@ class TimerManager {
     
     let TIME_INTERVAL: NSTimeInterval = 1
     
+    var duration: NSTimeInterval = 0
+    var elapsedTime: NSTimeInterval = 0
+    
     var aimTimer: NSTimer?
-//    var handler: (Int) -> ()
-    var duration = NSTimeInterval(0)
-    var elapsedTime = NSTimeInterval(0)
     
     var isOn: Bool {
         get {
