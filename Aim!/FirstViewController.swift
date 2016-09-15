@@ -11,9 +11,10 @@ import UIKit
 class FirstViewController: UIViewController {
     
     var delegate: AimSessionDurationInfoDelegate?
+    var sessionManager = SessionManager()
     
-    let defaultSessionDuration: NSTimeInterval = 25 * 60
-    let hourLongSessionDuration: NSTimeInterval = 60 * 60
+//    let defaultSessionDuration: NSTimeInterval = 25 * 60
+//    let hourLongSessionDuration: NSTimeInterval = 60 * 60
 //<<<<<<< HEAD
 ////    var timerDelegate: AimSessionTimerLabelDisplayDelegate?
 //    var timerManager = TimerManager()
@@ -44,7 +45,7 @@ class FirstViewController: UIViewController {
 //        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
-            delegate.getSessionDuration(defaultSessionDuration)
+            delegate.getSessionDuration(sessionManager.aimDefaultSessionDuration)
         }
         
         // Doesn't work: 
@@ -61,7 +62,7 @@ class FirstViewController: UIViewController {
 //        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
-            delegate.getSessionDuration(hourLongSessionDuration)
+            delegate.getSessionDuration(sessionManager.aimHourLongSessionDuration)
         }
     }
     

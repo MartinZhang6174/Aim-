@@ -14,7 +14,6 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
     
     @IBOutlet weak var aimTimerLabel: UILabel!
     @IBOutlet weak var aimSessionDurationInfoDisplayLabel: UILabel!
-    @IBOutlet weak var aimSessionTimerDisplayLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,7 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SessionMainViewController.timerComplete), name: TimerManager.notificationComplete, object: timerManager)
         
         updateTimerLabel()
-//        aimTimerLabel.text = timerManager.timeString
+
     }
     
     // MARK: - AimSessionDurationInfoDelegate
@@ -39,12 +38,7 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
         timerManager.startTimer()
     }
     
-//    func updateTimerLabel(timerSeconds: Int) {
-//        aimSessionDurationInfoDisplayLabel.text = "\(timerSeconds)"
-//    }
-    
     // MARK: - Actions
-
     @IBAction func endAimSessionButtonPressed(sender: AnyObject) {
         timerManager.stopTimer()
         
@@ -53,11 +47,12 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
     
     // MARK: - General Functions
     func updateTimerLabel() {
-        aimTimerLabel.text = timerManager.timeString
+        let currentTime = timerManager.elapsedTime
+        aimTimerLabel.text = Utility.convertSecondsToTimeString(currentTime)
     }
-
+    
     func timerComplete() {
-        // do this when timer completes its full duration.
+        // Do this when timer completes its full duration.
     }
 }
 

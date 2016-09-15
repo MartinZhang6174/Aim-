@@ -19,7 +19,7 @@ class SessionDurationCustomizationViewController: UIViewController {
     
     var delegate: AimSessionDurationInfoDelegate?
     
-    var customDuration: NSTimeInterval = 0
+    var customDuration: NSTimeInterval = 300
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,7 @@ class SessionDurationCustomizationViewController: UIViewController {
         focusGuide1.widthAnchor.constraintEqualToAnchor(self.minusButton.widthAnchor, multiplier: 1).active = true
         focusGuide1.heightAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.heightAnchor, multiplier: 1).active = true
         
+        updateTimerLabel(customDuration)
     }
     
     // MARK: UIFocusEnvironment
@@ -75,31 +76,44 @@ class SessionDurationCustomizationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Actions
     @IBAction func reduceSessionDurationButtonPressed(sender: AnyObject) {
-       print("Minus")
+        print("Minus")
+        customDuration -= 1
+        updateTimerLabel(customDuration)
     }
 
     @IBAction func addSessionDurationButtonPressed(sender: AnyObject) {
         print("Plus")
+        customDuration += 1
+        updateTimerLabel(customDuration)
     }
     
     @IBAction func startCustomizedSessionButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("startCustomizedSessionSegue", sender: self)
         if let delegate = self.delegate {
-            
-            delegate.getSessionDuration(60)
+            print("Custom \(customDuration) long session started.")
+            delegate.getSessionDuration(customDuration)
         }
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - General Functions
+    func updateTimerLabel(timerSeconds: NSTimeInterval) {
+        let timeString = Utility.convertSecondsToTimeString(timerSeconds)
+        customDurationLabel.text = timeString
     }
-    */
+    
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "startCustomizedSessionSegue" {
+            let mainSessionViewController = segue.destinationViewController as? SessionMainViewController
+            
+            if let sessionVC = mainSessionViewController {
+                self.delegate = sessionVC
+            }
+        }
+    }
+    
 
 }
