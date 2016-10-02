@@ -28,7 +28,7 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
     
     // MARK: - AimSessionDurationInfoDelegate
     func getSessionDuration(durationInSeconds: NSTimeInterval) {
-        aimSessionDurationInfoDisplayLabel.text = "\(durationInSeconds / 60)-Minute-Long Session In Progress!"
+        aimSessionDurationInfoDisplayLabel.text = "\(Int(durationInSeconds / 60))-Minute-Long Session In Progress!"
         timerManager.duration = NSTimeInterval(durationInSeconds)
         timerManager.startTimer()
     }

@@ -19,31 +19,21 @@ class SessionDurationCustomizationViewController: UIViewController {
     
     var delegate: AimSessionDurationInfoDelegate?
     
-    var customDuration: NSTimeInterval = 300
+    var sessionManager = SessionManager()
+    var customDuration: NSTimeInterval = 0  // custom duration in seconds.
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        focusGuide = UIFocusGuide()
-        focusGuide1 = UIFocusGuide()
-        view.addLayoutGuide(focusGuide)
-        view.addLayoutGuide(focusGuide1)
+        setUpFocusGuides()
         
-        // Setting up focusGuide constraints:
-        focusGuide.leftAnchor.constraintEqualToAnchor(self.plusButton.leftAnchor).active = true
-        focusGuide.topAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.topAnchor).active = true
-        // Size anchors
-        focusGuide.widthAnchor.constraintEqualToAnchor(self.plusButton.widthAnchor, multiplier: 1).active = true
-        focusGuide.heightAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.heightAnchor, multiplier: 1).active = true
-        
-        // Setting up focusGuide1 constarints:
-        focusGuide1.leftAnchor.constraintEqualToAnchor(self.minusButton.leftAnchor).active = true
-        focusGuide1.topAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.topAnchor).active = true
-        // Size anchors for layout guide 01
-        focusGuide1.widthAnchor.constraintEqualToAnchor(self.minusButton.widthAnchor, multiplier: 1).active = true
-        focusGuide1.heightAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.heightAnchor, multiplier: 1).active = true
-        
+        customDuration = sessionManager.aimCustomizableSessionDuration
         updateTimerLabel(customDuration)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     // MARK: UIFocusEnvironment
@@ -70,29 +60,47 @@ class SessionDurationCustomizationViewController: UIViewController {
             focusGuide1.preferredFocusedView = nil
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setUpFocusGuides() {
+        focusGuide = UIFocusGuide()
+        focusGuide1 = UIFocusGuide()
+        view.addLayoutGuide(focusGuide)
+        view.addLayoutGuide(focusGuide1)
+        
+        // Setting up focusGuide constraints:
+        focusGuide.leftAnchor.constraintEqualToAnchor(self.plusButton.leftAnchor).active = true
+        focusGuide.topAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.topAnchor).active = true
+        // Size anchors
+        focusGuide.widthAnchor.constraintEqualToAnchor(self.plusButton.widthAnchor, multiplier: 1).active = true
+        focusGuide.heightAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.heightAnchor, multiplier: 1).active = true
+        
+        // Setting up focusGuide1 constarints:
+        focusGuide1.leftAnchor.constraintEqualToAnchor(self.minusButton.leftAnchor).active = true
+        focusGuide1.topAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.topAnchor).active = true
+        // Size anchors for layout guide 01
+        focusGuide1.widthAnchor.constraintEqualToAnchor(self.minusButton.widthAnchor, multiplier: 1).active = true
+        focusGuide1.heightAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.heightAnchor, multiplier: 1).active = true
     }
     
     // MARK: - Actions
     @IBAction func reduceSessionDurationButtonPressed(sender: AnyObject) {
         print("Minus")
-        customDuration -= 1
+        // add logic to increase the decremented value if user repeats this action after n amount of times within a specific time frame.
+        customDuration -= 60
         updateTimerLabel(customDuration)
     }
 
     @IBAction func addSessionDurationButtonPressed(sender: AnyObject) {
         print("Plus")
-        customDuration += 1
+        // add logic to increase the incremented value if user repeats this action after n amount of times within a specific time frame.
+        customDuration += 60
         updateTimerLabel(customDuration)
     }
     
     @IBAction func startCustomizedSessionButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("startCustomizedSessionSegue", sender: self)
         if let delegate = self.delegate {
-            print("Custom \(customDuration) long session started.")
+            print("Custom \(customDuration) seconds long session started.")
             delegate.getSessionDuration(customDuration)
         }
     }
@@ -114,6 +122,4 @@ class SessionDurationCustomizationViewController: UIViewController {
             }
         }
     }
-    
-
 }

@@ -15,7 +15,7 @@ class TimerManager {
     static let notificationSecondTick = "TimerNotificationSecondTick"
     static let notificationComplete = "TimerNotificationComplete"
     
-    let TIME_INTERVAL: NSTimeInterval = 1
+    let TIME_INTERVAL: NSTimeInterval = 0.01    // Change back to 1.
     var delegate: AimSessionTimerLabelDisplayDelegate?
     
     var duration: NSTimeInterval = 0
@@ -33,37 +33,40 @@ class TimerManager {
         }
     }
     
-    // Considering creating a utility class to handle this function so that it may be used across all classes.
-//    var timeString: String {
-//        get {
-//            let totalSeconds = Int(self.elapsedTime)
-//            
-//            let hours = totalSeconds / 3600
-//            let minutes = (totalSeconds / 60 ) % 60
-//            let seconds = totalSeconds % 60
-//            
-//            var hoursString = ""
-//            if hours > 0 {
-//                hoursString = "\(hours):"
-//            }
-//            
-//            var minutesString = ""
-//            if minutes < 10 {
-//                minutesString = "0\(minutes):"
-//            } else {
-//                minutesString = "\(minutes):"
-//            }
-//            
-//            var secondsString = ""
-//            if seconds < 10 {
-//                secondsString = "0\(seconds)"
-//            } else {
-//                secondsString = "\(seconds)"
-//            }
-//            
-//            return hoursString + minutesString + secondsString
-//        }
-//    }
+    /* 
+    //  Refactored to Utility.swift
+     
+    var timeString: String {
+        get {
+            let totalSeconds = Int(self.elapsedTime)
+            
+            let hours = totalSeconds / 3600
+            let minutes = (totalSeconds / 60 ) % 60
+            let seconds = totalSeconds % 60
+            
+            var hoursString = ""
+            if hours > 0 {
+                hoursString = "\(hours):"
+            }
+            
+            var minutesString = ""
+            if minutes < 10 {
+                minutesString = "0\(minutes):"
+            } else {
+                minutesString = "\(minutes):"
+            }
+            
+            var secondsString = ""
+            if seconds < 10 {
+                secondsString = "0\(seconds)"
+            } else {
+                secondsString = "\(seconds)"
+            }
+            
+            return hoursString + minutesString + secondsString
+        }
+    }
+ */
     
     // MARK: - Timer Functions
     func startTimer() {
