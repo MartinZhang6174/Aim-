@@ -11,7 +11,19 @@ import UIKit
 class FirstViewController: UIViewController {
     
     var delegate: AimSessionDurationInfoDelegate?
+    var sessionManager = SessionManager()
     
+//    let defaultSessionDuration: NSTimeInterval = 25 * 60
+//    let hourLongSessionDuration: NSTimeInterval = 60 * 60
+//<<<<<<< HEAD
+////    var timerDelegate: AimSessionTimerLabelDisplayDelegate?
+//    var timerManager = TimerManager()
+//    
+//=======
+//    var timerManager = TimerManager()
+
+//>>>>>>> origin/NelsonWorkingBranch
+
     // Outlets from FirstViewController
     @IBOutlet weak var defaultSessionDurationButton: UIButton!
     @IBOutlet weak var hourLongSessionDurationButton: UIButton!
@@ -31,7 +43,7 @@ class FirstViewController: UIViewController {
         print("defaultSessionDurationButtonPressed")
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
-            delegate.getSessionDuration(25)
+            delegate.getSessionDuration(sessionManager.aimDefaultSessionDuration)
         }
         
     }
@@ -41,7 +53,7 @@ class FirstViewController: UIViewController {
 //        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
-            delegate.getSessionDuration(60)
+            delegate.getSessionDuration(sessionManager.aimHourLongSessionDuration)
         }
     }
     

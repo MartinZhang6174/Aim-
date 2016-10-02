@@ -15,7 +15,7 @@ class TimerManager {
     static let notificationSecondTick = "TimerNotificationSecondTick"
     static let notificationComplete = "TimerNotificationComplete"
     
-    let TIME_INTERVAL: NSTimeInterval = 1
+    let TIME_INTERVAL: NSTimeInterval = 0.01    // Change back to 1.
     var delegate: AimSessionTimerLabelDisplayDelegate?
     
     var duration: NSTimeInterval = 0
@@ -33,6 +33,9 @@ class TimerManager {
         }
     }
     
+    /* 
+    //  Refactored to Utility.swift
+     
     var timeString: String {
         get {
             let totalSeconds = Int(self.elapsedTime)
@@ -63,6 +66,7 @@ class TimerManager {
             return hoursString + minutesString + secondsString
         }
     }
+ */
     
     // MARK: - Timer Functions
     func startTimer() {
