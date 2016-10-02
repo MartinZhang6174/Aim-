@@ -37,10 +37,6 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
         timerManager.startTimer()
     }
     
-//    func updateTimerLabel(timerSeconds: Int) {
-//        aimSessionDurationInfoDisplayLabel.text = "\(timerSeconds)"
-//    }
-    
     // MARK: - Actions
 
     @IBAction func endAimSessionButtonPressed(sender: AnyObject) {

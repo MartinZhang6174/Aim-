@@ -11,14 +11,7 @@ import UIKit
 class FirstViewController: UIViewController {
     
     var delegate: AimSessionDurationInfoDelegate?
-//<<<<<<< HEAD
-////    var timerDelegate: AimSessionTimerLabelDisplayDelegate?
-//    var timerManager = TimerManager()
-//    
-//=======
-//    var timerManager = TimerManager()
-
-//>>>>>>> origin/NelsonWorkingBranch
+    
     // Outlets from FirstViewController
     @IBOutlet weak var defaultSessionDurationButton: UIButton!
     @IBOutlet weak var hourLongSessionDurationButton: UIButton!
@@ -27,30 +20,20 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
     }
     
     override func viewWillAppear(animated: Bool) {
-//        timerManager.resetTimer()
         self.tabBarController?.tabBar.backgroundColor = UIColor.redColor()
     }
 
     @IBAction func defaultSessionDurationButtonPressed(sender: AnyObject) {
         print("defaultSessionDurationButtonPressed")
-//        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
             delegate.getSessionDuration(25)
         }
         
-        // Doesn't work: 
-        
-//        print(self.timerManager.seconds)
-        // Updating timer label content
-//        if let timerLabelDelegate = self.timerDelegate {
-//            timerLabelDelegate.updateTimerLabel(self.timerManager.seconds)
-//        }
     }
     
     @IBAction func hourLongSessionDurationButtonPressed(sender: AnyObject) {
