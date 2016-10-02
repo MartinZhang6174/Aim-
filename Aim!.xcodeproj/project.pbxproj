@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B77EC481D78B4DC00276501 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B77EC471D78B4DC00276501 /* TimerManager.swift */; };
+		1B77EC4B1D78B70600276501 /* NSTimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B77EC4A1D78B70600276501 /* NSTimerExtension.swift */; };
+		1BB5564A1D889B2C00BB4AC1 /* SessionDurationCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB556491D889B2C00BB4AC1 /* SessionDurationCustomizationViewController.swift */; };
+		1BFF60EF1D89F60900845443 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF60EE1D89F60900845443 /* Utility.swift */; };
 		9C2169171D6908800010CDFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2169161D6908800010CDFD /* AppDelegate.swift */; };
 		9C2169191D6908800010CDFD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2169181D6908800010CDFD /* FirstViewController.swift */; };
 		9C21691B1D6908800010CDFD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21691A1D6908800010CDFD /* SecondViewController.swift */; };
@@ -16,9 +20,15 @@
 		9C21692F1D6A25AF0010CDFD /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21692E1D6A25AF0010CDFD /* SessionManager.swift */; };
 		9C2169341D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2169331D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift */; };
 		9C2169361D6C083C0010CDFD /* SessionMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2169351D6C083C0010CDFD /* SessionMainViewController.swift */; };
+		9C6AD8891D8799E1006EAAAE /* SessionDurationCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AD8881D8799E1006EAAAE /* SessionDurationCustomizationViewController.swift */; };
+		9C77480F1D825A8300E0BC3B /* AimSessionTimerLabelDisplayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C77480E1D825A8300E0BC3B /* AimSessionTimerLabelDisplayDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B77EC471D78B4DC00276501 /* TimerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		1B77EC4A1D78B70600276501 /* NSTimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimerExtension.swift; sourceTree = "<group>"; };
+		1BB556491D889B2C00BB4AC1 /* SessionDurationCustomizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDurationCustomizationViewController.swift; sourceTree = "<group>"; };
+		1BFF60EE1D89F60900845443 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		9C2169131D6908800010CDFD /* Aim!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aim!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2169161D6908800010CDFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C2169181D6908800010CDFD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +40,8 @@
 		9C21692E1D6A25AF0010CDFD /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		9C2169331D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AimSessionDurationInfoDelegate.swift; sourceTree = "<group>"; };
 		9C2169351D6C083C0010CDFD /* SessionMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMainViewController.swift; sourceTree = "<group>"; };
+		9C6AD8881D8799E1006EAAAE /* SessionDurationCustomizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDurationCustomizationViewController.swift; sourceTree = "<group>"; };
+		9C77480E1D825A8300E0BC3B /* AimSessionTimerLabelDisplayDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AimSessionTimerLabelDisplayDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B77EC491D78B6F300276501 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B77EC4A1D78B70600276501 /* NSTimerExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		1BFF60ED1D89F5ED00845443 /* Utility Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1BFF60EE1D89F60900845443 /* Utility.swift */,
+			);
+			name = "Utility Classes";
+			sourceTree = "<group>";
+		};
 		9C21690A1D6908800010CDFD = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +96,8 @@
 				9C21692B1D6A25360010CDFD /* Controller Classes */,
 				9C21692A1D6A252C0010CDFD /* Model Classes */,
 				9C2169291D6A25210010CDFD /* Manager Classes */,
+				1BFF60ED1D89F5ED00845443 /* Utility Classes */,
+				1B77EC491D78B6F300276501 /* Extensions */,
 				9C21692C1D6A25590010CDFD /* User Interface */,
 			);
 			path = "Aim!";
@@ -77,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				9C21692E1D6A25AF0010CDFD /* SessionManager.swift */,
+				1B77EC471D78B4DC00276501 /* TimerManager.swift */,
 			);
 			name = "Manager Classes";
 			sourceTree = "<group>";
@@ -95,6 +126,8 @@
 				9C2169181D6908800010CDFD /* FirstViewController.swift */,
 				9C2169351D6C083C0010CDFD /* SessionMainViewController.swift */,
 				9C21691A1D6908800010CDFD /* SecondViewController.swift */,
+
+				9C6AD8881D8799E1006EAAAE /* SessionDurationCustomizationViewController.swift */,
 			);
 			name = "Controller Classes";
 			sourceTree = "<group>";
@@ -121,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				9C2169331D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift */,
+				9C77480E1D825A8300E0BC3B /* AimSessionTimerLabelDisplayDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -197,11 +231,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C21691B1D6908800010CDFD /* SecondViewController.swift in Sources */,
+				1B77EC481D78B4DC00276501 /* TimerManager.swift in Sources */,
+
+				9C6AD8891D8799E1006EAAAE /* SessionDurationCustomizationViewController.swift in Sources */,
 				9C2169361D6C083C0010CDFD /* SessionMainViewController.swift in Sources */,
 				9C2169171D6908800010CDFD /* AppDelegate.swift in Sources */,
 				9C2169281D6923980010CDFD /* AimSession.swift in Sources */,
+				9C77480F1D825A8300E0BC3B /* AimSessionTimerLabelDisplayDelegate.swift in Sources */,
 				9C2169341D6C07100010CDFD /* AimSessionDurationInfoDelegate.swift in Sources */,
+				1BFF60EF1D89F60900845443 /* Utility.swift in Sources */,
 				9C21692F1D6A25AF0010CDFD /* SessionManager.swift in Sources */,
+				1B77EC4B1D78B70600276501 /* NSTimerExtension.swift in Sources */,
 				9C2169191D6908800010CDFD /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

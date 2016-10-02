@@ -8,10 +8,9 @@
 
 import UIKit
 
-class SessionManager: NSObject {
-    
+struct SessionManager {
     let aimDefaultSessionDuration: NSTimeInterval = 60*25
     let aimHourLongSessionDuration: NSTimeInterval = 60*60
-    var aimCustomizableSessionDuration: NSTimeInterval = 0
+    var aimCustomizableSessionDuration: NSTimeInterval = 60*25
     
 }

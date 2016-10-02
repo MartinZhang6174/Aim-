@@ -11,6 +11,18 @@ import UIKit
 class FirstViewController: UIViewController {
     
     var delegate: AimSessionDurationInfoDelegate?
+    var sessionManager = SessionManager()
+    
+//    let defaultSessionDuration: NSTimeInterval = 25 * 60
+//    let hourLongSessionDuration: NSTimeInterval = 60 * 60
+//<<<<<<< HEAD
+////    var timerDelegate: AimSessionTimerLabelDisplayDelegate?
+//    var timerManager = TimerManager()
+//    
+//=======
+//    var timerManager = TimerManager()
+
+//>>>>>>> origin/NelsonWorkingBranch
 
     // Outlets from FirstViewController
     @IBOutlet weak var defaultSessionDurationButton: UIButton!
@@ -20,11 +32,7 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-//        if let imageView = defaultSessionDurationButton.imageView {
-//            imageView.adjustsImageWhenAncestorFocused = true
-//        }
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -35,29 +43,31 @@ class FirstViewController: UIViewController {
         print("defaultSessionDurationButtonPressed")
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
-            delegate.getSessionDuration(25)
+            delegate.getSessionDuration(sessionManager.aimDefaultSessionDuration)
         }
+        
     }
     
     @IBAction func hourLongSessionDurationButtonPressed(sender: AnyObject) {
         print("hourLongSessionDurationButtonPressed")
+//        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
-            delegate.getSessionDuration(60)
+            delegate.getSessionDuration(sessionManager.aimHourLongSessionDuration)
         }
     }
     
     @IBAction func customizeSessionDurationButtonPressed(sender: AnyObject) {
         print("customizeSessionDurationButtonPressed")
-//        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
-        
+        performSegueWithIdentifier("sessionDurationCustomizationSegue", sender: self)
     }
     
     @IBAction func startSessionWithoutTimeLimitationButtonPressed(sender: AnyObject) {
         print("startSessionWithoutTimeLimitationButtonPressed")
+//        timerManager.startTimer()
         performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
-            delegate.getSessionDuration(14114624)
+            delegate.getSessionDurationForSessionWithoutDurationLimits()
         }
     }
     

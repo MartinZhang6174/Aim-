@@ -9,5 +9,6 @@
 import Foundation
 
 protocol AimSessionDurationInfoDelegate {
-    func getSessionDuration(duration: Int) 
+    func getSessionDuration(durationInSeconds: NSTimeInterval)
+    func getSessionDurationForSessionWithoutDurationLimits()
 }
