@@ -12,17 +12,6 @@ class FirstViewController: UIViewController {
     
     var delegate: AimSessionDurationInfoDelegate?
     var sessionManager = SessionManager()
-    
-//    let defaultSessionDuration: NSTimeInterval = 25 * 60
-//    let hourLongSessionDuration: NSTimeInterval = 60 * 60
-//<<<<<<< HEAD
-////    var timerDelegate: AimSessionTimerLabelDisplayDelegate?
-//    var timerManager = TimerManager()
-//    
-//=======
-//    var timerManager = TimerManager()
-
-//>>>>>>> origin/NelsonWorkingBranch
 
     // Outlets from FirstViewController
     @IBOutlet weak var defaultSessionDurationButton: UIButton!
