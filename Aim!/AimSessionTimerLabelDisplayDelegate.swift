@@ -9,5 +9,5 @@
 import Foundation
 
 protocol AimSessionTimerLabelDisplayDelegate {
-    func updateTimerLabel(timerSeconds: NSTimeInterval)
+    func updateTimerLabel(_ timerSeconds: TimeInterval)
 }

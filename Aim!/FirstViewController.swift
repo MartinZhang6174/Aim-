@@ -24,43 +24,43 @@ class FirstViewController: UIViewController {
 
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.tabBarController?.tabBar.backgroundColor = UIColor.redColor()
+    override func viewWillAppear(_ animated: Bool) {
+//        self.tabBarController?.tabBar.backgroundColor = UIColor.red()
     }
 
-    @IBAction func defaultSessionDurationButtonPressed(sender: AnyObject) {
+    @IBAction func defaultSessionDurationButtonPressed(_ sender: AnyObject) {
         print("defaultSessionDurationButtonPressed")
-        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
+        performSegue(withIdentifier: "showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
             delegate.getSessionDuration(sessionManager.aimDefaultSessionDuration)
         }
         
     }
     
-    @IBAction func hourLongSessionDurationButtonPressed(sender: AnyObject) {
+    @IBAction func hourLongSessionDurationButtonPressed(_ sender: AnyObject) {
         print("hourLongSessionDurationButtonPressed")
 //        timerManager.startTimer()
-        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
+        performSegue(withIdentifier: "showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
             delegate.getSessionDuration(sessionManager.aimHourLongSessionDuration)
         }
     }
     
-    @IBAction func customizeSessionDurationButtonPressed(sender: AnyObject) {
+    @IBAction func customizeSessionDurationButtonPressed(_ sender: AnyObject) {
         print("customizeSessionDurationButtonPressed")
-        performSegueWithIdentifier("sessionDurationCustomizationSegue", sender: self)
+        performSegue(withIdentifier: "sessionDurationCustomizationSegue", sender: self)
     }
     
-    @IBAction func startSessionWithoutTimeLimitationButtonPressed(sender: AnyObject) {
+    @IBAction func startSessionWithoutTimeLimitationButtonPressed(_ sender: AnyObject) {
         print("startSessionWithoutTimeLimitationButtonPressed")
 //        timerManager.startTimer()
-        performSegueWithIdentifier("showMainAimSessionSegue", sender: self)
+        performSegue(withIdentifier: "showMainAimSessionSegue", sender: self)
         if let delegate = self.delegate {
             delegate.getSessionDurationForSessionWithoutDurationLimits()
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMainAimSessionSegue" {
             let mainSessionViewController = segue.destinationViewController as? SessionMainViewController
             
