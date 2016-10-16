@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Aim Sessions-->
+        <!--Aim! Sessions-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Aim_" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Using Aim Sessions helps you maximizing your productivity." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Using Aim! Sessions helps you maximizing your productivity." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="57"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,7 +42,7 @@
                                     <constraint firstAttribute="height" constant="100" id="Jvh-NA-Tbl"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Customize Aim Session Duration "/>
+                                <state key="normal" title="Customize Aim! Session Duration "/>
                                 <connections>
                                     <action selector="customizeSessionDurationButtonPressed:" destination="9pv-A4-QxB" eventType="primaryActionTriggered" id="Lm5-PN-nVx"/>
                                 </connections>
@@ -93,7 +93,7 @@
                             <constraint firstItem="C50-Lv-EOh" firstAttribute="top" secondItem="fkv-n3-h5H" secondAttribute="bottom" constant="70" id="tuK-2j-J6N"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Aim Sessions" image="Artboard 2@1x" selectedImage="AimWhiteBG" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Aim! Sessions" image="Artboard 2@1x" selectedImage="AimWhiteBG" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="customizeSessionDurationButton" destination="C50-Lv-EOh" id="Stw-R0-XEY"/>
                         <outlet property="defaultSessionDurationButton" destination="fkv-n3-h5H" id="fyj-Yt-9Xr"/>
@@ -242,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="4484" y="646"/>
         </scene>
-        <!--Aim Achievements -->
+        <!--Aim! Achievements -->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Aim_" customModuleProvider="target" sceneMemberID="viewController">
@@ -278,7 +278,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Aim Achievements " image="Artboard 2@1x" selectedImage="AwardWhiteBG" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Aim! Achievements " image="Artboard 2@1x" selectedImage="AwardWhiteBG" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
