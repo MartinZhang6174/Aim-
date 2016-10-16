@@ -16,8 +16,8 @@ class SecondViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.tabBarController?.tabBar.backgroundColor = UIColor.redColor()
+    override func viewWillAppear(_ animated: Bool) {
+//        self.tabBarController?.tabBar.backgroundColor = UIColor.red()
     }
 
     override func didReceiveMemoryWarning() {

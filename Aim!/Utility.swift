@@ -10,7 +10,7 @@ import UIKit
 
 class Utility {
     
-    class func convertSecondsToTimeString(seconds: NSTimeInterval) -> String {
+    class func convertSecondsToTimeString(_ seconds: TimeInterval) -> String {
         
         let totalSeconds = Int(seconds)
         

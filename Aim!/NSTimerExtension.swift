@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSTimer {
+extension Timer {
     
     func startTimer() {
         

@@ -19,17 +19,17 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
         super.viewDidLoad()
         
         // Add observers to handle timer label update and completed timer.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SessionMainViewController.updateTimerLabel), name: TimerManager.notificationSecondTick, object: timerManager)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SessionMainViewController.timerComplete), name: TimerManager.notificationComplete, object: timerManager)
+        NotificationCenter.default.addObserver(self, selector: #selector(SessionMainViewController.updateTimerLabel), name: NSNotification.Name(rawValue: TimerManager.notificationSecondTick), object: timerManager)
+        NotificationCenter.default.addObserver(self, selector: #selector(SessionMainViewController.timerComplete), name: NSNotification.Name(rawValue: TimerManager.notificationComplete), object: timerManager)
         
         updateTimerLabel()
 
     }
     
     // MARK: - AimSessionDurationInfoDelegate
-    func getSessionDuration(durationInSeconds: NSTimeInterval) {
+    func getSessionDuration(_ durationInSeconds: TimeInterval) {
         aimSessionDurationInfoDisplayLabel.text = "\(Int(durationInSeconds / 60))-Minute-Long Session In Progress!"
-        timerManager.duration = NSTimeInterval(durationInSeconds)
+        timerManager.duration = TimeInterval(durationInSeconds)
         timerManager.startTimer()
     }
 
@@ -39,10 +39,10 @@ class SessionMainViewController: UIViewController, AimSessionDurationInfoDelegat
     }
     
     // MARK: - Actions
-    @IBAction func endAimSessionButtonPressed(sender: AnyObject) {
+    @IBAction func endAimSessionButtonPressed(_ sender: AnyObject) {
         timerManager.stopTimer()
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - General Functions
