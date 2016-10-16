@@ -13,3 +13,4 @@ Apple tvOS
 5. Set up online sever to store user info to achieve multi-device sync.
 
 # App Snapshot:
+![alt tag](file:///Users/martinzhang/Desktop/Screen%20Shot%202016-10-16%20at%2011.05.10%20AM.jpg)
