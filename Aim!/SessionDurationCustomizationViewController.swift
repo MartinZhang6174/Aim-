@@ -136,9 +136,9 @@ class SessionDurationCustomizationViewController: UIViewController {
     
     
     // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "startCustomizedSessionSegue" {
-            let mainSessionViewController = segue.destinationViewController as? SessionMainViewController
+            let mainSessionViewController = segue.destination as? SessionMainViewController
             
             if let sessionVC = mainSessionViewController {
                 self.delegate = sessionVC
