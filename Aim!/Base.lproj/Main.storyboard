@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11163.2" systemVersion="16A323" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,18 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Using Aim! Sessions helps you maximizing your productivity." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose one of the session-duration options to start with. " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbD-0s-4vq">
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <rect key="frame" x="543" y="260" width="835" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZM-1v-TYU">
+                                <rect key="frame" x="1004" y="428" width="406" height="162"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="1 Hour"/>
                                 <connections>
@@ -37,6 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C50-Lv-EOh">
+                                <rect key="frame" x="510" y="660" width="900" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="900" id="HGV-zP-Cwc"/>
                                     <constraint firstAttribute="height" constant="100" id="Jvh-NA-Tbl"/>
@@ -48,6 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyn-zU-eFI">
+                                <rect key="frame" x="510" y="830" width="900" height="100"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Start Aiming Without Duration Limits!"/>
                                 <connections>
@@ -55,6 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkv-n3-h5H">
+                                <rect key="frame" x="510" y="428" width="406" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="4KO-a5-lva"/>
                                     <constraint firstAttribute="width" constant="406" id="e5I-8h-zob"/>
@@ -66,31 +69,37 @@
                                     <action selector="defaultSessionDurationButtonPressed:" destination="9pv-A4-QxB" eventType="primaryActionTriggered" id="zEC-A4-vdn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tab Bar Sample 1@1x" translatesAutoresizingMaskIntoConstraints="NO" id="YpP-s9-Kdx">
-                                <frame key="frameInset" width="1920" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tab Bar Sample 1@1x" translatesAutoresizingMaskIntoConstraints="NO" id="YpP-s9-Kdx">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="140"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Aim! to maximize your productivity!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46r-mT-Gag">
+                                <rect key="frame" x="579" y="44" width="763" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NZM-1v-TYU" firstAttribute="centerY" secondItem="fkv-n3-h5H" secondAttribute="centerY" id="05K-gK-OGW"/>
                             <constraint firstItem="NZM-1v-TYU" firstAttribute="height" secondItem="fkv-n3-h5H" secondAttribute="height" id="0Lh-1P-CXk"/>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
                             <constraint firstItem="Lyn-zU-eFI" firstAttribute="top" secondItem="C50-Lv-EOh" secondAttribute="bottom" constant="70" id="8iD-6c-UeM"/>
                             <constraint firstItem="Lyn-zU-eFI" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="AMO-fF-m3n"/>
                             <constraint firstItem="C50-Lv-EOh" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="HF7-fE-n2E"/>
-                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="KQZ-1w-vlD" secondAttribute="trailing" constant="548" id="R1n-mc-Jug"/>
+                            <constraint firstItem="IbD-0s-4vq" firstAttribute="top" secondItem="YpP-s9-Kdx" secondAttribute="bottom" constant="120" id="IYd-ng-0DX"/>
+                            <constraint firstAttribute="trailing" secondItem="YpP-s9-Kdx" secondAttribute="trailing" id="Qgi-8w-J7S"/>
                             <constraint firstItem="Lyn-zU-eFI" firstAttribute="height" secondItem="C50-Lv-EOh" secondAttribute="height" id="SD5-hc-tL7"/>
-                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" relation="lessThanOrEqual" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="548" id="UhD-zt-7c8"/>
                             <constraint firstItem="NZM-1v-TYU" firstAttribute="width" secondItem="fkv-n3-h5H" secondAttribute="width" id="WkP-pH-dhg"/>
                             <constraint firstItem="IbD-0s-4vq" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="XEO-QQ-KOe"/>
-                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="200" id="a8h-6r-Bnm"/>
-                            <constraint firstItem="IbD-0s-4vq" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="30" id="bPv-H2-aSo"/>
                             <constraint firstItem="NZM-1v-TYU" firstAttribute="trailing" secondItem="C50-Lv-EOh" secondAttribute="trailing" id="di6-Lm-Dq1"/>
                             <constraint firstItem="Lyn-zU-eFI" firstAttribute="width" secondItem="C50-Lv-EOh" secondAttribute="width" id="diZ-tx-fE6"/>
+                            <constraint firstItem="YpP-s9-Kdx" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="dq2-Oi-5yS"/>
                             <constraint firstItem="fkv-n3-h5H" firstAttribute="leading" secondItem="C50-Lv-EOh" secondAttribute="leading" id="eEu-BW-6Bc"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="C50-Lv-EOh" secondAttribute="bottom" constant="320" id="gHi-9L-7Wg"/>
+                            <constraint firstItem="46r-mT-Gag" firstAttribute="centerX" secondItem="YpP-s9-Kdx" secondAttribute="centerX" id="gxb-0o-Wl6"/>
                             <constraint firstItem="C50-Lv-EOh" firstAttribute="top" secondItem="fkv-n3-h5H" secondAttribute="bottom" constant="70" id="tuK-2j-J6N"/>
+                            <constraint firstItem="YpP-s9-Kdx" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="yLq-ef-TjY"/>
+                            <constraint firstItem="46r-mT-Gag" firstAttribute="centerY" secondItem="YpP-s9-Kdx" secondAttribute="centerY" id="yTh-Av-Cgi"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Aim! Sessions" image="Artboard 2@1x" selectedImage="AimWhiteBG" id="acW-dT-cKf"/>
@@ -120,16 +129,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82g-mz-9cj">
+                                <rect key="frame" x="486" y="350" width="948" height="359"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="300"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Duration Info Display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHQ-zP-7CL">
+                                <rect key="frame" x="580" y="228" width="760" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-UI-iBh">
+                                <rect key="frame" x="778" y="829" width="364" height="86"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="End Aim Session"/>
                                 <connections>
@@ -172,6 +184,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTq-Lf-boa">
+                                <rect key="frame" x="140" y="361" width="200" height="359"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="W6L-kg-OmN"/>
                                 </constraints>
@@ -183,16 +196,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Session Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSI-bK-Cc2">
+                                <rect key="frame" x="593" y="200" width="734" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="47 : 15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iv7-cd-fjb">
+                                <rect key="frame" x="525" y="361" width="871" height="359"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="300"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5k-XL-gYF">
+                                <rect key="frame" x="1581" y="361" width="200" height="359"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="gzW-0m-ZAs"/>
                                 </constraints>
@@ -204,6 +220,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnU-Mi-Nke">
+                                <rect key="frame" x="662" y="829" width="597" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="597" id="evk-tq-Dy1"/>
                                     <constraint firstAttribute="height" constant="86" id="oNl-aB-Nty"/>
@@ -255,18 +272,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Here is your achievement board, work hard and it will become beautiful." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
+                                <rect key="frame" x="397" y="519" width="1127" height="43"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
+                                <rect key="frame" x="853" y="570" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tab Bar Sample 2@1x" translatesAutoresizingMaskIntoConstraints="NO" id="ebV-F6-5xH">
-                                <frame key="frameInset" width="1920" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

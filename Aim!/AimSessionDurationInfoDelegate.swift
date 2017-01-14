@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AimSessionDurationInfoDelegate {
+protocol AimSessionDurationInfoDelegate: class {
     func getSessionDuration(_ durationInSeconds: TimeInterval)
     func getSessionDurationForSessionWithoutDurationLimits()
 }

@@ -18,9 +18,14 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var hourLongSessionDurationButton: UIButton!
     @IBOutlet weak var customizeSessionDurationButton: UIButton!
     @IBOutlet weak var startSessionWithoutTimeLimitButton: UIButton!
+    @IBOutlet weak var aimLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (self.tabBarController?.tabBar.isHidden)! {
+            aimLabel.isHidden = true
+        }
 
     }
     

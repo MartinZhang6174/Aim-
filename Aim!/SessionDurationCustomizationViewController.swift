@@ -24,29 +24,6 @@ class SessionDurationCustomizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//<<<<<<< HEAD
-//        focusGuide = UIFocusGuide()
-//        focusGuide1 = UIFocusGuide()
-//        view.addLayoutGuide(focusGuide)
-//        view.addLayoutGuide(focusGuide1)
-//        
-//        // Setting up focusGuide constraints:
-//        focusGuide.leftAnchor.constraintEqualToAnchor(self.plusButton.leftAnchor).active = true
-//        focusGuide.topAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.topAnchor).active = true
-//        
-//        // Size anchors:
-//        focusGuide.widthAnchor.constraintEqualToAnchor(self.plusButton.widthAnchor, multiplier: 1).active = true
-//        focusGuide.heightAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.heightAnchor, multiplier: 1).active = true
-//        
-//        // Setting up focusGuide1 constarints:
-//        focusGuide1.leftAnchor.constraintEqualToAnchor(self.minusButton.leftAnchor).active = true
-//        focusGuide1.topAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.topAnchor).active = true
-//        
-//        // Size anchors for layout guide 01
-//        focusGuide1.widthAnchor.constraintEqualToAnchor(self.minusButton.widthAnchor, multiplier: 1).active = true
-//        focusGuide1.heightAnchor.constraintEqualToAnchor(self.startCustomizedSessionButton.heightAnchor, multiplier: 1).active = true
-//=======
         
         setUpFocusGuides()
         

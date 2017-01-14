@@ -15,7 +15,7 @@ class TimerManager {
     static let notificationSecondTick = "TimerNotificationSecondTick"
     static let notificationComplete = "TimerNotificationComplete"
     
-    let TIME_INTERVAL: TimeInterval = 0.01    // Change back to 1.
+    let TIME_INTERVAL: TimeInterval = 1    // Change back to 1.
     var delegate: AimSessionTimerLabelDisplayDelegate?
     
     var duration: TimeInterval = 0
